@@ -147,27 +147,6 @@
     <Content Include="favicon.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="images\001 Host TCP.png" />
-    <Content Include="images\002 Host Extras.png" />
-    <Content Include="images\003 Host Server.png" />
-    <Content Include="images\004 Host Options.png" />
-    <Content Include="images\005 Host Maps.png" />
-    <Content Include="images\006 Host Running.png" />
-    <Content Include="images\areas_linez.gif" />
-    <Content Include="images\bar_tl_inner.gif" />
-    <Content Include="images\dgVoodooWrapperActivation.png" />
-    <Content Include="images\dot.gif" />
-    <Content Include="images\gog.png" />
-    <Content Include="images\gray64.gif" />
-    <Content Include="images\left.gif" />
-    <Content Include="images\lith_logo.gif" />
-    <Content Include="images\ltblue64.gif" />
-    <Content Include="images\right.gif" />
-    <Content Include="images\srv_bottom.gif" />
-    <Content Include="images\srv_header.gif" />
-    <Content Include="images\srv_refresh.gif" />
-    <Content Include="images\srv_top.gif" />
-    <Content Include="images\steam.png" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\holder.min.js" />
@@ -204,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\" />
     <Folder Include="Static\" />
   </ItemGroup>
   <ItemGroup>

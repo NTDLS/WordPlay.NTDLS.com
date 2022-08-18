@@ -1,12 +1,6 @@
-﻿using WordPlay.Shared.Repository;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using System.Linq;
-using WordPlay.Shared;
-using WordPlay.Shared.Models;
-using System.Net.Mail;
-using System.Net;
-using System;
-using System.Collections.Generic;
+using WordPlay.Shared.Repository;
 
 namespace WordPlaySyncService.Controllers
 {
@@ -16,86 +10,85 @@ namespace WordPlaySyncService.Controllers
         {
             ViewBag.Title = "Home";
 
-            var words = new List<string>();
-            return View(words);
+            return View(new List<string>());
         }
 
         public ActionResult Browse()
         {
             ViewBag.Title = "Browse";
-            ViewBag.TextBrowseWord = Request.QueryString["Lookup"] ?? "Hello";
+            ViewBag.Word = Request.QueryString["Word"] ?? "Hello%";
 
             if (Request.HttpMethod == "POST")
             {
-                ViewBag.TextBrowseWord = Request.Form["TextBrowseWord"];
+                ViewBag.Word = Request.Form["Word"];
             }
 
-            return View(WordRepository.BrowseWords(ViewBag.TextBrowseWord));
+            return View(WordRepository.BrowseWords(ViewBag.Word));
         }
 
         public ActionResult Translate()
         {
             ViewBag.Title = "Translate";
-            ViewBag.TextBrowseWord = Request.QueryString["Lookup"] ?? "Hello";
+            ViewBag.Word = Request.QueryString["Word"] ?? "Hello%";
 
             if (Request.HttpMethod == "POST")
             {
-                ViewBag.TextBrowseWord = Request.Form["TextBrowseWord"];
+                ViewBag.Word = Request.Form["Word"];
             }
 
-            return View(WordRepository.Translate(ViewBag.TextBrowseWord));
+            return View(WordRepository.Translate(ViewBag.Word));
         }
 
         public ActionResult SoundsLikeMetaphone()
         {
             ViewBag.Title = "SoundsLike (Metaphone)";
-            ViewBag.TextBrowseWord = Request.QueryString["Lookup"] ?? "Hello";
+            ViewBag.Word = Request.QueryString["Word"] ?? "Hello%";
 
             if (Request.HttpMethod == "POST")
             {
-                ViewBag.TextBrowseWord = Request.Form["TextBrowseWord"];
+                ViewBag.Word = Request.Form["Word"];
             }
 
-            return View(WordRepository.SoundsLikeMetaphone(ViewBag.TextBrowseWord));
+            return View(WordRepository.SoundsLikeMetaphone(ViewBag.Word));
         }
 
         public ActionResult SoundsLikeDoubleMetaphone()
         {
             ViewBag.Title = "SoundsLike (Double-Metaphone)";
-            ViewBag.TextBrowseWord = Request.QueryString["Lookup"] ?? "Hello";
+            ViewBag.Word = Request.QueryString["Word"] ?? "Hello%";
 
             if (Request.HttpMethod == "POST")
             {
-                ViewBag.TextBrowseWord = Request.Form["TextBrowseWord"];
+                ViewBag.Word = Request.Form["Word"];
             }
 
-            return View(WordRepository.SoundsLikeDoubleMetaphone(ViewBag.TextBrowseWord));
+            return View(WordRepository.SoundsLikeDoubleMetaphone(ViewBag.Word));
         }
 
         public ActionResult SoundsLikeSoundEx()
         {
             ViewBag.Title = "SoundsLike (SoundEx)";
-            ViewBag.TextBrowseWord = Request.QueryString["Lookup"] ?? "Hello";
+            ViewBag.Word = Request.QueryString["Word"] ?? "Hello%";
 
             if (Request.HttpMethod == "POST")
             {
-                ViewBag.TextBrowseWord = Request.Form["TextBrowseWord"];
+                ViewBag.Word = Request.Form["Word"];
             }
 
-            return View(WordRepository.SoundsLikeSoundEx(ViewBag.TextBrowseWord));
+            return View(WordRepository.SoundsLikeSoundEx(ViewBag.Word));
         }
 
         public ActionResult Synonyms()
         {
             ViewBag.Title = "Synonyms";
-            ViewBag.TextBrowseWord = Request.QueryString["Lookup"] ?? "Hello";
+            ViewBag.Word = Request.QueryString["Word"] ?? "Hello%";
 
             if (Request.HttpMethod == "POST")
             {
-                ViewBag.TextBrowseWord = Request.Form["TextBrowseWord"];
+                ViewBag.Word = Request.Form["Word"];
             }
 
-            return View(WordRepository.Synonyms(ViewBag.TextBrowseWord));
+            return View(WordRepository.Synonyms(ViewBag.Word));
         }
     }
 }

@@ -2,9 +2,18 @@
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 
+<div class="row">
+    <h1>@ViewBag.Title</h1>
+    <h4>
+        This form takes a single word, translates it forward into 9 different languages and records how many of them translate back. The confidence is based on the number of languages that link back.
+        Feel free to add a % sign to the beginning and/or end of the word to match wildcards.
+    </h4>
+    <hr />
+</div>
+
 <form action="?" method="post" class="navbar-form navbar-right" role="search">
     <div class="form-group">
-        <input name="TextBrowseWord" type="text" class="form-control" value="@ViewBag.TextBrowseWord">
+        <strong>Single Word:</strong> <input name="Word" type="text" class="form-control" value="@ViewBag.Word">
     </div>
     <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Search</button>
 </form>
@@ -28,7 +37,7 @@
                     <tr>
                         <td><font face="MS Sans Serif, Geneva" size="2">@x.Source</font></td>
                         <td><font face="MS Sans Serif, Geneva" size="2">@x.SourceLanguage</font></td>
-                        <td><font face="MS Sans Serif, Geneva" size="2"><a href="?Lookup=@x.Target">@x.Target</a></font></td>
+                        <td><font face="MS Sans Serif, Geneva" size="2"><a href="?Word=@x.Target">@x.Target</a></font></td>
                         <td><font face="MS Sans Serif, Geneva" size="2">@x.TargetLanguage</font></td>
                         <td><font face="MS Sans Serif, Geneva" size="2">@x.Confidence</font></td>
                         <td><font face="MS Sans Serif, Geneva" size="2">@x.IsDirty</font></td>
